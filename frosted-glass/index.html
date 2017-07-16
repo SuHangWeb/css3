@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>毛玻璃效果</title>
+    <style>
+        body, div::before {
+            background: url("photo.jpg") 0 / cover fixed;
+        }
+
+        div {
+            width: 500px;
+            height: 500px;
+            background: hsla(0, 0%, 100%, .3);
+            position: relative;
+            margin: 80px auto;
+            overflow: hidden;
+            font-size:50px;
+            line-height:500px;
+            text-align: center;
+            font-style: italic;
+            color: #fff;
+            padding: 30px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .5em 1em rgba(0, 0, 0, 0.6);
+            text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
+            /* background-color: rgba(141, 141, 141, 0.35);
+            background-blend-mode: darken;如果你觉得按照第一个方法做出来的效果背景太亮的话，可以使用滤镜来变暗一点 */
+        }
+
+        div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: -30px;
+            z-index: -1;
+            -webkit-filter: blur(8px);
+            filter: blur(8px);
+        }
+    </style>
+
+</head>
+<body>
+<div>CSS3毛玻璃</div>
+</body>
+</html>
